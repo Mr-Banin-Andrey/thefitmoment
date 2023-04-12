@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class TimetableViewModel {
+    
+    weak var coordinator: TimetableCoordinator?
+}

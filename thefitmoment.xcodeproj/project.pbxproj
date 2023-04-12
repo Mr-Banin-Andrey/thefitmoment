@@ -22,6 +22,9 @@
 		9DD4AD8329E4B2A0002AA212 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4AD8229E4B2A0002AA212 /* AppCoordinator.swift */; };
 		9DD4AD8529E4B2D1002AA212 /* TimetableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4AD8429E4B2D1002AA212 /* TimetableView.swift */; };
 		9DD4AD8729E4B2DC002AA212 /* TimetableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4AD8629E4B2DC002AA212 /* TimetableViewModel.swift */; };
+		9DD4AD8929E6DB95002AA212 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4AD8829E6DB95002AA212 /* Coordinatable.swift */; };
+		9DD4AD8B29E6E808002AA212 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4AD8A29E6E808002AA212 /* ProfileCoordinator.swift */; };
+		9DD4AD8D29E6E849002AA212 /* TimetableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4AD8C29E6E849002AA212 /* TimetableCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		9DD4AD8229E4B2A0002AA212 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9DD4AD8429E4B2D1002AA212 /* TimetableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableView.swift; sourceTree = "<group>"; };
 		9DD4AD8629E4B2DC002AA212 /* TimetableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewModel.swift; sourceTree = "<group>"; };
+		9DD4AD8829E6DB95002AA212 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		9DD4AD8A29E6E808002AA212 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		9DD4AD8C29E6E849002AA212 /* TimetableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 		9DA94F7329D617570095D94B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9DD4AD8E29E7439D002AA212 /* Model */,
 				9DD4AD7E29E4B0BD002AA212 /* ProfileView.swift */,
 				9DD4AD8029E4B119002AA212 /* ProfileViewModel.swift */,
 				9DA94F7829D619020095D94B /* ProfileViewController.swift */,
@@ -137,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				9DD4AD8229E4B2A0002AA212 /* AppCoordinator.swift */,
+				9DD4AD8829E6DB95002AA212 /* Coordinatable.swift */,
+				9DD4AD8A29E6E808002AA212 /* ProfileCoordinator.swift */,
+				9DD4AD8C29E6E849002AA212 /* TimetableCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -147,6 +157,13 @@
 				9DD4AD7C29E4AA4B002AA212 /* AppFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		9DD4AD8E29E7439D002AA212 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +249,12 @@
 				9DA94F7229D612E60095D94B /* TabBarController.swift in Sources */,
 				9DD4AD8129E4B119002AA212 /* ProfileViewModel.swift in Sources */,
 				9DA94F7929D619020095D94B /* ProfileViewController.swift in Sources */,
+				9DD4AD8929E6DB95002AA212 /* Coordinatable.swift in Sources */,
+				9DD4AD8B29E6E808002AA212 /* ProfileCoordinator.swift in Sources */,
 				9D18A4CC29D4CB3C003998DD /* AppDelegate.swift in Sources */,
 				9D18A4CE29D4CB3C003998DD /* SceneDelegate.swift in Sources */,
 				9DD4AD7929E49B73002AA212 /* Module.swift in Sources */,
+				9DD4AD8D29E6E849002AA212 /* TimetableCoordinator.swift in Sources */,
 				9DD4AD8729E4B2DC002AA212 /* TimetableViewModel.swift in Sources */,
 				9DD4AD7D29E4AA4B002AA212 /* AppFactory.swift in Sources */,
 			);
@@ -381,7 +401,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -414,7 +434,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
