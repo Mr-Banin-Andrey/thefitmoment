@@ -14,25 +14,39 @@ class ProfileView: UIView {
     
     private weak var delegate: ProfileViewDelegate?
     
-    private let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//        setupUI()
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     init(delegate: ProfileViewDelegate) {
         self.delegate = delegate
         super.init(frame: .zero)
+        setupUI()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
     func configureTableView(dataSource: UITableViewDataSource,
                             delegate: UITableViewDelegate) {
         tableView.dataSource = dataSource
         tableView.delegate = delegate
+        tableView.dequeueReusableCell(withIdentifier: "default")
 //        tableView.register(<#T##aClass: AnyClass?##AnyClass?#>, forHeaderFooterViewReuseIdentifier: <#T##String#>)
         
     }

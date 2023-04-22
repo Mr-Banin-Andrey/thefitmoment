@@ -44,6 +44,4 @@ class AppCoordinator: Coordinatable {
         childCoordinators = childCoordinators.filter { $0 === coordinator }
     }
     
-    
-    
 }

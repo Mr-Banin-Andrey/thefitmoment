@@ -14,11 +14,12 @@ class AppFactory {
         switch moduleType {
         case .profile:
             let viewModel = ProfileViewModel()
-            let view = UINavigationController(rootViewController: ProfileViewController())
+            let view = UINavigationController(rootViewController: ProfileViewController(viewModel: viewModel))
             return Module(moduleType: moduleType, viewModel: viewModel, view: view)
         case .timetable:
+            ()
             let viewModel = TimetableViewModel()
-            let view = UINavigationController(rootViewController: TimetableViewController())
+            let view = UINavigationController(rootViewController: TimetableViewController(viewModel: viewModel))
             return Module(moduleType: moduleType, viewModel: viewModel, view: view)
         }
     }

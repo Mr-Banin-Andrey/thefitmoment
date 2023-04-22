@@ -31,6 +31,15 @@ class ProfileCoordinator: ModuleCoordinatable {
         return viewController
     }
     
+    func showNumbersOfWorkouts() {
+        
+    }
     
+    func showPrice() {
+        
+    }
     
+    func showFeedback() {
+        
+    }
 }

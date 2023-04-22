@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProfileViewModelProtocol {
+protocol ProfileViewModelProtocol: ViewModelProtocol {
     var onStateDidChange: ((ProfileViewModel.State) -> Void)? { get set }
     func updateState(viewInput: ProfileViewModel.ViewInput)
 }
@@ -20,17 +20,30 @@ class ProfileViewModel: ProfileViewModelProtocol {
     }
     
     enum ViewInput {
-        case setting
+        case showNumbersOfWorkouts
+        case showPrice
+        case showFeedback
     }
     
     weak var coordinator: ProfileCoordinator?
     var onStateDidChange: ((State) -> Void)?
     
-    func updateState(viewInput: ViewInput) {
-        <#code#>
+    private (set) var state: State = .initial {
+        didSet {
+            onStateDidChange?(state)
+        }
     }
     
-    
+    func updateState(viewInput: ViewInput) {
+        switch viewInput {
+        case .showNumbersOfWorkouts:
+            coordinator?.showNumbersOfWorkouts()
+        case .showPrice:
+            coordinator?.showPrice()
+        case .showFeedback:
+            coordinator?.showFeedback()
+        }
+    }
     
     
 }
