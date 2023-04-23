@@ -14,7 +14,7 @@ class TimetableView: UIView {
     
     private weak var delegate: TimetableViewDelegate?
     
-    private lazy var collectionView: UICollectionView = {
+    private lazy var collectionViewCalendar: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -26,29 +26,30 @@ class TimetableView: UIView {
         self.delegate = delegate
         super.init(frame: .zero)
         
+        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCollectionView(dataSource: UICollectionViewDataSource,
+    func configureCollectionViewCalendar(dataSource: UICollectionViewDataSource,
                                  delegate: UICollectionViewDelegateFlowLayout) {
-        collectionView.delegate = delegate
-        collectionView.dataSource = dataSource
-        collectionView.register(UICollectionViewListCell.self,
+        collectionViewCalendar.delegate = delegate
+        collectionViewCalendar.dataSource = dataSource
+        collectionViewCalendar.register(UICollectionViewListCell.self,
                                 forCellWithReuseIdentifier: "UICollectionViewListCell")
         
     }
     
     private func setupUI() {
-        self.addSubview(self.collectionView)
+        self.addSubview(self.collectionViewCalendar)
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
-            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 100)
+            collectionViewCalendar.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            collectionViewCalendar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            collectionViewCalendar.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            collectionViewCalendar.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     

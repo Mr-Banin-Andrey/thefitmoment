@@ -26,9 +26,9 @@ class TimetableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
+//        view.backgroundColor = 
         
-        timetableView.configureCollectionView(dataSource: self, delegate: self)
+        timetableView.configureCollectionViewCalendar(dataSource: self, delegate: self)
     }
 }
 

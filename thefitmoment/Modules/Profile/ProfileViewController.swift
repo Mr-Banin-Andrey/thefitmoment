@@ -45,11 +45,17 @@ extension ProfileViewController: UITableViewDelegate {
 
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        ValuesInTheCell().valuesInTheCell.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath) 
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customTableProfileId", for: indexPath) as? ProfileCustomTableViewCell else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultId", for: indexPath)
+            return cell
+        }
+        
+        let value = ValuesInTheCell().valuesInTheCell
+        cell.setup(with: value[indexPath.row])
         return cell
     }
     

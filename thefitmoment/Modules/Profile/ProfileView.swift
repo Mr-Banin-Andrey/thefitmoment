@@ -20,16 +20,6 @@ class ProfileView: UIView {
         return tableView
     }()
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//
-//        setupUI()
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     init(delegate: ProfileViewDelegate) {
         self.delegate = delegate
         super.init(frame: .zero)
@@ -41,13 +31,13 @@ class ProfileView: UIView {
     }
     
     
-    
     func configureTableView(dataSource: UITableViewDataSource,
                             delegate: UITableViewDelegate) {
         tableView.dataSource = dataSource
         tableView.delegate = delegate
-        tableView.dequeueReusableCell(withIdentifier: "default")
-//        tableView.register(<#T##aClass: AnyClass?##AnyClass?#>, forHeaderFooterViewReuseIdentifier: <#T##String#>)
+        tableView.register(ProfileCustomTableViewCell.self, forCellReuseIdentifier: "customTableProfileId")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "defaultId")
+//        tableView.register(T##aClass: AnyClass?##AnyClass?, forHeaderFooterViewReuseIdentifier: <#T##String#>)
         
     }
     
@@ -62,6 +52,5 @@ class ProfileView: UIView {
         ])
         
     }
-    
     
 }
