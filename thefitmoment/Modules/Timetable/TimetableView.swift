@@ -17,6 +17,7 @@ class TimetableView: UIView {
     private lazy var collectionViewCalendar: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -27,6 +28,7 @@ class TimetableView: UIView {
         super.init(frame: .zero)
         
         self.setupUI()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -37,8 +39,9 @@ class TimetableView: UIView {
                                  delegate: UICollectionViewDelegateFlowLayout) {
         collectionViewCalendar.delegate = delegate
         collectionViewCalendar.dataSource = dataSource
-        collectionViewCalendar.register(UICollectionViewListCell.self,
-                                forCellWithReuseIdentifier: "UICollectionViewListCell")
+        collectionViewCalendar.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: "customWeekId")
+        collectionViewCalendar.register(UICollectionViewCell.self,
+                                forCellWithReuseIdentifier: "defaultId")
         
     }
     
@@ -53,5 +56,4 @@ class TimetableView: UIView {
         ])
     }
     
-//    @objc private func
 }
